@@ -35,9 +35,79 @@ Los protocolos TCP y UDP usan estos puertos para enviar y recibir datos hacia la
 
 ---
 
-## Implementación
+## Ejercicios
 
-Este proyecto contiene dos programas principales:
+## 3. Uso de URL en Java
+
+### 3.1 Leyendo los valores de un objeto URL
+
+El programador puede usar varios métodos para leer la información de un objeto `URL`:  
+`getProtocol`, `getAuthority`, `getHost`, `getPort`, `getPath`, `getQuery`, `getFile`, `getRef`.
+
+#### ✅ Solución al Ejercicio 1
+
+Se creó una clase de servicio (`UrlServiceImpl`) que implementa la lógica para analizar una URL usando estos métodos, y expone la información a través de un endpoint REST:
+
+```java
+URL url = new URL("https://www.facebook.com");
+
+componentes.add("Protocol: " + url.getProtocol());
+componentes.add("Authority: " + url.getAuthority());
+componentes.add("Host: " + url.getHost());
+componentes.add("Port: " + url.getPort());
+componentes.add("Path: " + url.getPath());
+componentes.add("Query: " + url.getQuery());
+componentes.add("File: " + url.getFile());
+componentes.add("Ref: " + url.getRef());
+```
+
+### 🔍 Endpoint para analizar URL
+
+`GET /url/analyzeUrl`  
+Devuelve un JSON con los componentes extraídos de una URL de ejemplo (`https://www.facebook.com`).
+
+![img.png](src/main/resources/img.png)
+---
+
+### 3.2 Leyendo páginas de internet
+
+Para leer páginas de internet se usan flujos de datos (`BufferedReader`) y se trata la entrada como si se leyera desde el teclado.
+
+#### ✅ Solución al Ejercicio 2
+
+Se implementó un método `readHtml` que:
+
+- Pide al usuario una dirección URL.
+- Crea un stream de entrada con esa URL.
+- Guarda el contenido HTML en memoria.
+- Lo devuelve como respuesta HTML al cliente.
+
+---
+
+### 🔍 Endpoint para leer una página web
+
+`GET /url/read-html?url=ejemplo.com`  
+Recibe una URL como parámetro y devuelve su contenido HTML. Por ejemplo:
+
+![img.png](src/main/resources/facebook.png)
+
+Devuelve el html completo de la pagina por ejemplo (`https://www.facebook.com`).
+
+
+## 3.2 Leyendo páginas de internet
+
+Para leer páginas de internet debe crear flujos de datos (streams) y leer como si lo hiciera del teclado.  
+El ejemplo siguiente lee datos de internet y los presenta en la pantalla (fig. 1).
+
+### EJERCICIO 2
+
+Escriba una aplicación `browser` que pregunte una dirección URL al usuario y que lea datos de esa dirección y los almacene en un archivo con el nombre `resultado.html`.  
+Luego intente ver este archivo en el navegador.
+
+
+## Ejercicio 3
+
+Esta parte contiene dos partes
 
 ### Servidor (`SquareServer.java`)
 
@@ -47,6 +117,8 @@ Este proyecto contiene dos programas principales:
 - Envía el resultado de vuelta al cliente.
 - Maneja entradas inválidas respondiendo con un mensaje de error.
 
+![img.png](src/main/resources/servidorSquared.png)
+
 ### Cliente (`EchoClient.java`)
 
 - Se conecta al servidor en `localhost` y puerto 35000.
@@ -54,6 +126,8 @@ Este proyecto contiene dos programas principales:
 - Envía el número al servidor.
 - Muestra la respuesta recibida (el cuadrado calculado o mensaje de error).
 - Permite enviar múltiples números hasta que el usuario decida cerrar.
+
+![img.png](src/main/resources/client.png)
 
 ---
 
@@ -64,3 +138,4 @@ Este proyecto contiene dos programas principales:
 ```bash
 javac com/edu/escuelaing/arsw/networking/Networking/sokets/SquareServer.java
 javac com/edu/escuelaing/arsw/networking/Networking/sokets/EchoClient.java
+```

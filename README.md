@@ -139,3 +139,35 @@ Esta parte contiene dos partes
 javac com/edu/escuelaing/arsw/networking/Networking/sokets/SquareServer.java
 javac com/edu/escuelaing/arsw/networking/Networking/sokets/EchoClient.java
 ```
+
+## Ejercicio 4
+
+Escriba un servidor web que soporte multiples solicitudes seguidas (no concurrentes). El servidor debe retornar todos los archivos solicitados, incluyendo
+paginas html e im´agenes.
+
+# Servidor Web en Java
+
+Este proyecto implementa un servidor web básico en Java que soporta múltiples solicitudes seguidas (no concurrentes) y sirve archivos estáticos como páginas HTML e imágenes.
+
+## Características
+
+- Soporte para múltiples conexiones una tras otra (no simultáneas).
+- Sirve archivos estáticos desde la carpeta `public`.
+- Respuesta automática para archivos `.html`, `.jpg`, `.png`, `.gif`, `.css`, `.js`, etc.
+- Respuesta 404 si el archivo no se encuentra.
+
+## Instrucciones
+
+1. Coloca tus archivos estáticos en la carpeta `public`.
+2. Compila el servidor:
+
+```bash
+javac HttpServer.java
+```
+
+Abre tu navegador en: http://localhost:35000
+Ejecutar en el servidor:
+
+```bash
+java HttpServer
+```

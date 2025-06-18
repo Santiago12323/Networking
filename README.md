@@ -322,3 +322,29 @@ Puerto donde publicar tu objeto (ej: 1099): 3000
 IP del otro usuario (ej: localhost): localhost
 Puerto del otro usuario: 2000
 ```
+
+# 📚 Documentación del Proyecto - Javadoc
+
+Este proyecto utiliza **Maven** para la gestión de dependencias y la construcción. La documentación de código se genera automáticamente con el plugin `maven-javadoc-plugin`.
+
+---
+
+## ✅ Requisitos
+
+- Java JDK instalado (preferiblemente 11 o superior).
+- Maven instalado y configurado.
+---
+
+🚀 ¿Cómo generar la documentación?
+Para generar la documentación HTML del proyecto, ejecuta el siguiente comando en la raíz del proyecto:
+
+```bash
+mvn javadoc:javadoc
+```
+
+📁 ¿Dónde se encuentra la documentación generada?
+Después de ejecutar el comando, puedes encontrar la documentación en el siguiente directorio:
+
+```bash
+target/site/apidocs/index.html
+```

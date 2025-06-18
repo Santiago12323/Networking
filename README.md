@@ -35,6 +35,7 @@ Los protocolos TCP y UDP usan estos puertos para enviar y recibir datos hacia la
 
 ---
 
+
 ## Ejercicios
 
 ## 3. Uso de URL en Java
@@ -165,9 +166,15 @@ Este proyecto implementa un servidor web básico en Java que soporta múltiples 
 javac HttpServer.java
 ```
 
-Abre tu navegador en: http://localhost:35000
-Ejecutar en el servidor:
-
 ```bash
 java HttpServer
 ```
+
+Abre tu navegador en: http://localhost:35000
+Ejecutar en el servidor:
+
+
+
+
+![image](https://github.com/user-attachments/assets/2cafb96c-e990-4304-8f46-817701750453)
+

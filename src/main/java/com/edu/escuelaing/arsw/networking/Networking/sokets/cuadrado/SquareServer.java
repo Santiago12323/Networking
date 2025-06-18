@@ -1,4 +1,4 @@
-package com.edu.escuelaing.arsw.networking.Networking.sokets;
+package com.edu.escuelaing.arsw.networking.Networking.sokets.cuadrado;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -7,10 +7,22 @@ import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-public class SquareServer  {
+/**
+ * Servidor TCP que escucha en el puerto 35000.
+ * Recibe números enviados por el cliente y devuelve su cuadrado.
+ */
+public class SquareServer {
 
+    /**
+     * Método principal del servidor.
+     * Acepta una conexión entrante y responde con el cuadrado del número recibido.
+     *
+     * @param args Argumentos de línea de comandos (no utilizados).
+     * @throws IOException si ocurre un error en la conexión.
+     */
     public static void main(String[] args) throws IOException {
         ServerSocket serverSocket = null;
+
         try {
             serverSocket = new ServerSocket(35000);
             System.out.println("Servidor esperando conexiones en el puerto 35000...");
@@ -50,5 +62,4 @@ public class SquareServer  {
         clientSocket.close();
         serverSocket.close();
     }
-
 }

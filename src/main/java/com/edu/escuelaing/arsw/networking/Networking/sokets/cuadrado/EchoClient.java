@@ -1,4 +1,4 @@
-package com.edu.escuelaing.arsw.networking.Networking.sokets;
+package com.edu.escuelaing.arsw.networking.Networking.sokets.cuadrado;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -7,7 +7,19 @@ import java.io.PrintWriter;
 import java.net.Socket;
 import java.net.UnknownHostException;
 
+/**
+ * Cliente TCP que se conecta a un servidor en localhost:35000.
+ * Envía números ingresados por el usuario y recibe la respuesta del servidor
+ * con el cuadrado de cada número.
+ */
 public class EchoClient {
+
+    /**
+     * Método principal del cliente.
+     * Conecta al servidor, lee entrada del usuario y muestra la respuesta.
+     *
+     * @param args Argumentos de línea de comandos (no utilizados).
+     */
     public static void main(String[] args) {
         Socket socket = null;
         PrintWriter out = null;
@@ -48,4 +60,3 @@ public class EchoClient {
         }
     }
 }
-

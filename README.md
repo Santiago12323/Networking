@@ -144,7 +144,7 @@ javac com/edu/escuelaing/arsw/networking/Networking/sokets/EchoClient.java
 ## Ejercicio 4
 
 Escriba un servidor web que soporte multiples solicitudes seguidas (no concurrentes). El servidor debe retornar todos los archivos solicitados, incluyendo
-paginas html e im´agenes.
+paginas html e imagenes.
 
 # Servidor Web en Java
 
@@ -173,11 +173,20 @@ java HttpServer
 
 ![image](https://github.com/user-attachments/assets/02d2f97b-ea77-43b6-a224-6a96c7f72d2f)
 
-![image](https://github.com/user-attachments/assets/2cafb96c-e990-4304-8f46-817701750453)
 
 
 Abre tu navegador en: http://localhost:35000
 Ejecutar en el servidor:
+
+y podemos mostrar html 
+
+![image](https://github.com/user-attachments/assets/2cafb96c-e990-4304-8f46-817701750453)
+
+
+e imagenes 
+
+![image](https://github.com/user-attachments/assets/02e2db54-75f0-4961-b5a7-3a727eef0884)
+
 
 ## Ejercicio 5
 
@@ -245,9 +254,71 @@ cuando paramos el servidor
 
 ![image](https://github.com/user-attachments/assets/a4f4baf8-539a-4faa-b8e2-0ee8a5cb6b75)
 
+## Ejercicio 6
+
+Este proyecto implementa un sistema cliente-servidor usando **RMI (Remote Method Invocation)** en Java. El servidor expone un método remoto que recibe una cadena y responde con el mismo contenido, anteponiendo `"desde el servidor: "`.
 
 
+## 🚀 Instrucciones para ejecutar
+
+### 1. Compilar las clases
+
+```bash
+javac rmiexample/*.java
+```
+
+```bash
+rmic rmiexample.EchoServerImpl
+```
+
+![image](https://github.com/user-attachments/assets/400017bb-cfd1-4903-ac89-07922e7e9088)
 
 
+```bash
+bash
+start rmiregistry
+```
 
+4. Ejecutar el servidor
+```bash
+java rmiexample.EchoServerImpl
+```
 
+![image](https://github.com/user-attachments/assets/bdb6ce33-cbba-4e70-880e-4bb67d7850d4)
+
+## Ejercicio 7
+
+## 🚀 Instrucciones para ejecutar el Chat RMI
+
+### 1. Compila los archivos
+
+```bash
+javac chat/*.java
+```
+
+2. Ejecuta en dos terminales distintas
+🧑‍💻 Usuario 1:
+```bash
+java chat.ChatApp
+Responde con:
+```
+
+```yaml
+Tu nombre: Juan
+Puerto donde publicar tu objeto (ej: 1099): 2000
+IP del otro usuario (ej: localhost): localhost
+Puerto del otro usuario: 3000
+```
+
+👩‍💻 Usuario 2:
+```bash
+java chat.ChatApp
+Responde con:
+```
+
+```yaml
+Tu nombre: Ana
+Puerto donde publicar tu objeto (ej: 1099): 3000
+IP del otro usuario (ej: localhost): localhost
+Puerto del otro usuario: 2000
+```

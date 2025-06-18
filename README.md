@@ -173,13 +173,81 @@ java HttpServer
 
 ![image](https://github.com/user-attachments/assets/02d2f97b-ea77-43b6-a224-6a96c7f72d2f)
 
+![image](https://github.com/user-attachments/assets/2cafb96c-e990-4304-8f46-817701750453)
 
 
 Abre tu navegador en: http://localhost:35000
 Ejecutar en el servidor:
 
+## Ejercicio 5
+
+Utilizando Datagramas escriba un programa que se conecte a un servidor
+que responde la hora actual en el servidor. El programa debe actualizar la hora
+cada 5 segundos seg´un los datos del servidor. Si una hora no es recibida debe
+mantener la hora que ten´ıa. Para la prueba se apagar´a el servidor y despu´es de
+unos segundos se reactivar´a. El cliente debe seguir funcionando y actualizarse
+cuando el servidor este nuevamente funcionando
+
+## 🚀 Cómo ejecutar
+
+### 1. Compilar
+
+```bash
+javac TimeServerUDP.java
+javac TimeClientUDP.java
+```
+
+Ejecutar el servidor
+```bash
+java TimeServerUDP
+```
+Esto iniciará el servidor escuchando por peticiones en el puerto 9876.
+
+3. Ejecutar el cliente
+En otra terminal o consola:
+
+```bash
+java TimeClientUDP
+```
+java TimeClientUDP
+a vista de servidor
+
+![image](https://github.com/user-attachments/assets/452cf3a1-845a-4e1a-8b0c-516438097312)
+
+a vista de client
+
+![image](https://github.com/user-attachments/assets/5df41c5a-4c78-4f4c-96ad-95aa2ae6ccf3)
+
+## 🔄 Simulación de fallo y recuperación
+
+1. Detén el servidor con `Ctrl + C`.
+2. El cliente mostrará el último valor recibido cada 5 segundos.
+3. Vuelve a iniciar el servidor y el cliente se actualizará automáticamente.
+
+## 📝 Ejemplo de salida del cliente
+
+```yaml
+Hora recibida: 14:22:10
+Hora recibida: 14:22:15
+Servidor no disponible. Manteniendo hora: 14:22:15
+Servidor no disponible. Manteniendo hora: 14:22:15
+Hora recibida: 14:22:25
+```
+
+y podemos ver que efectibamente
+
+el cliente ve 
+
+![image](https://github.com/user-attachments/assets/d6c8d17e-f975-4a16-82ac-4e435bbf113e)
+
+cuando paramos el servidor 
+
+
+![image](https://github.com/user-attachments/assets/a4f4baf8-539a-4faa-b8e2-0ee8a5cb6b75)
 
 
 
-![image](https://github.com/user-attachments/assets/2cafb96c-e990-4304-8f46-817701750453)
+
+
+
 

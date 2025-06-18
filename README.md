@@ -166,9 +166,14 @@ Este proyecto implementa un servidor web básico en Java que soporta múltiples 
 javac HttpServer.java
 ```
 
+
 ```bash
 java HttpServer
 ```
+
+![image](https://github.com/user-attachments/assets/02d2f97b-ea77-43b6-a224-6a96c7f72d2f)
+
+
 
 Abre tu navegador en: http://localhost:35000
 Ejecutar en el servidor:
